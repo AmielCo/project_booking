@@ -1,19 +1,31 @@
-import express from 'express'
-import { createHotel, deleteHotel, GetAllHotels, getHotelById, updateHotel } from '../controllers/hotelController.js';
-import { verifyAdmin } from '../middlewares/userCheck.js';
+import express from "express";
+import {
+  countByCity,
+  countByType,
+  createHotel,
+  deleteHotel,
+  getAllHotels,
+  getHotelById,
+  updateHotel,
+} from "../controllers/hotelController.js";
+import { verifyAdmin } from "../middlewares/userCheck.js";
 import Hotel from "../models/Hotel.js";
 
 const router = express.Router();
 
-router.post('/', verifyAdmin, createHotel);
+router.post("/", verifyAdmin, createHotel);
 
-router.put("/:id",verifyAdmin, updateHotel )
+router.put("/:id", verifyAdmin, updateHotel);
 
-router.delete("/:id",verifyAdmin, deleteHotel);
+router.delete("/:id", verifyAdmin, deleteHotel);
 
-router.get("/:id", getHotelById);
+router.get("/find/:id", getHotelById);
 
-router.get("/", GetAllHotels);
+router.get("/", getAllHotels);
+router.get("/countByCity", countByCity);
+
+router.get("/CountByType", countByType);
+router.get("/room/:id", countByType);
 
 
 export default router;
