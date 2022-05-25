@@ -1,11 +1,13 @@
 import express from "express";
-import { createRoom, deleteRoom, GetAllRooms, getRoomById, updateRoom } from "../controllers/roomController.js";
+import { createRoom, deleteRoom, GetAllRooms, getRoomById, updateRoom, updateRoomAvailability } from "../controllers/roomController.js";
 import { verifyAdmin } from "../middlewares/userCheck.js";
 
 const router = express.Router();
 
 
 router.post("/:hotelid", verifyAdmin, createRoom);
+
+router.put("/availability/:id", updateRoomAvailability);
 
 router.put("/:id", verifyAdmin, updateRoom);
 

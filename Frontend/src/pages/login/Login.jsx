@@ -30,6 +30,13 @@ const Login = () => {
     }
   };
 
+   const navigateToHome = () => {
+     navigate("/");
+   };
+  
+    const navigateToRegister = () => {
+      navigate("/register");
+    };
   return (
     <div className="login">
       <div className="lContainer">
@@ -47,8 +54,14 @@ const Login = () => {
           onChange={handleChange}
           className="lInput"
         />
+        <button className="lButton" onClick={navigateToRegister}>
+          Not registered yet?
+        </button>
         <button disabled={loading} onClick={handleClick} className="lButton">
           Login
+        </button>
+        <button className="lButton" onClick={navigateToHome}>
+          To Home Page
         </button>
         {error && <span>{error.message}</span>}
       </div>

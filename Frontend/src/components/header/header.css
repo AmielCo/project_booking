@@ -23,6 +23,42 @@
     margin-bottom: 50px;
 }
 
+.a1:hover{
+    border: 1px solid white;
+        padding: 10px;
+        border-radius: 20px;
+        cursor: pointer;
+
+}
+.a2:hover {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+.a3:hover {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+.a4:hover {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+.a5:hover {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+
 .headerListItem {
     display: flex;
     align-items: center;
@@ -30,11 +66,7 @@
     gap: 10px;
 }
 
-.headerListItem.active{
-  border: 1px solid white;
-  padding:10px;
-    border-radius: 20px;
-}
+
 
 .headerDesc {
     margin: 20px 0px;

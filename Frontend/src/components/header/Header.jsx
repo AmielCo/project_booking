@@ -13,7 +13,7 @@ import { useContext, useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -53,6 +53,17 @@ const Header = ({ type }) => {
     navigate("/hotels", { state: { destination, dates, options } });
   };
 
+  const navigateToRegister = () => {
+    navigate("/register");
+  };
+
+  const navigateToHome = () => {
+    navigate("/");
+  };
+
+ 
+   
+
   return (
     <div className="header">
       <div
@@ -61,23 +72,27 @@ const Header = ({ type }) => {
         }
       >
         <div className="headerList">
-          <div className="headerListItem active">
+          <div className="headerListItem a1" onClick={navigateToHome}>
             <FontAwesomeIcon icon={faBed} />
             <span>Stays</span>
           </div>
-          <div className="headerListItem">
+
+          <div
+            className="headerListItem a2"
+                     >
             <FontAwesomeIcon icon={faPlane} />
             <span>Flights</span>
           </div>
-          <div className="headerListItem">
+
+          <div className="headerListItem a3">
             <FontAwesomeIcon icon={faCar} />
             <span>Car rentals</span>
           </div>
-          <div className="headerListItem">
+          <div className="headerListItem a4">
             <FontAwesomeIcon icon={faBed} />
             <span>Attractions</span>
           </div>
-          <div className="headerListItem">
+          <div className="headerListItem a5">
             <FontAwesomeIcon icon={faTaxi} />
             <span>Airport taxis</span>
           </div>
@@ -91,7 +106,15 @@ const Header = ({ type }) => {
               Get rewarded for your travels – unlock instant savings of 10% or
               more with a free Lamabooking account
             </p>
-            {!user && <button className="headerBtn">Sign in / Register</button>}
+            {!user && (
+              <button
+                className="headerBtn"
+                type="button"
+                onClick={navigateToRegister}
+              >
+                Register
+              </button>
+            )}
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
